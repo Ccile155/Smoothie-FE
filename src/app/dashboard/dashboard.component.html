@@ -1,0 +1,31 @@
+
+<h3>{{ subTitle }}</h3>
+
+<img src="../../assets/apple.png" alt="Une jolie pomme" (hover)= "vibre()">
+<img src="../../assets/strawberry.png" alt="Une jolie fraise">
+<img src="../../assets/raspberry.png" alt="Une jolie framboise">
+
+<div>
+
+    <form class="example-form">
+        <!-- <mat-form-field class="example-full-width">
+          <input matInput name='smoothie' [(ngModel)]='smoothie' placeholder="Smoothie" value="">
+        </mat-form-field> -->
+
+        <mat-form-field>
+            <mat-label>Recettes de Smoothie</mat-label>
+            <select matNativeControl required >
+              <option value="smoothie_frai">Smoothie Fraise</option>
+              <option value="smoothie_mang">Smoothie Mangue façon Piña Colada</option>
+              <option value="smoothie_vert">Green Smoothie</option>
+            </select>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="com">
+          <textarea matInput placeholder="Leave a comment" value="" name='smoothie' [(ngModel)]='smoothie'></textarea>
+        </mat-form-field>
+    </form>
+
+      <p class="$mat-red">{{smoothie}}</p>
+
+</div>

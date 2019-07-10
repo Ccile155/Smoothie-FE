@@ -1,0 +1,19 @@
+
+h1{
+    font-family: 'Montserrat', Verdana, sans-serif;
+    /* font-weight: bold;
+    font-style: italic;
+    /* color: rgb(206, 37, 37); */
+    /* text-shadow: 1px 1px 3px black; */ 
+    margin-right: 55px;
+}
+
+button{
+    font-family: 'Montserrat', Verdana, sans-serif;
+}
+
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }

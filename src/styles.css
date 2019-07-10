@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body{
+    font-family: 'Montserrat', Verdana, sans-serif;
+    /* background-color: "primary"; */
+    /* background-image: url('assets/Smoothie_home1.jpg');
+    background-repeat: no-repeat; */
+    text-align: center;
+    margin: 0px;
+}

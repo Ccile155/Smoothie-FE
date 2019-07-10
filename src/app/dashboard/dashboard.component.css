@@ -1,0 +1,22 @@
+
+img{
+    height:120px;
+    padding: 25px;
+}
+
+h3{
+    font-style: italic;
+    /* color: whitesmoke; */
+}
+
+input{
+    width: 200px;
+}
+
+mat-form-field{
+    font-family: 'Montserrat', Verdana, sans-serif;
+}
+
+.com{
+    /* color: crimson; */
+}
