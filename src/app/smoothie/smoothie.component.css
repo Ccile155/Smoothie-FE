@@ -1,0 +1,38 @@
+#titreListe{
+    text-align: center;
+    /* justify-content: center; */
+}
+
+/* .card-holder{
+    margin-right: 50px;
+} */
+
+.cards{
+    /* max-width: 400px; */
+    /* height: 400px; */
+    width: 300px;
+    float: left;
+    margin: 20px;
+}
+
+.card-header{
+    font-family: 'MontSerrat', Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-color: #F64081;
+    min-height: 50px;
+    vertical-align: middle;
+    margin: 0px;
+}
+
+img{
+    /* height: inherit; */
+    width: inherit;
+    }
+
+.card-footer{
+    font-style: italic;
+}
+
+.mat-stroked-button{
+    float: right;
+}

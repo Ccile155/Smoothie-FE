@@ -1,1 +1,19 @@
-<p>smoothie works!</p>
+<div id="titreListe">
+    <h2>Nos cocktails fruités</h2>
+</div>
+
+<!-- pourquoi pas dans body ?? -->
+<div class="card-holder"> 
+    <mat-card *ngFor="let smoothie of smoothies" class="cards">
+        <h3 class="card-header">{{ smoothie.title }}</h3>
+        
+        <!-- <img mat-card-image src="[imgUrl + smoothie-frai.jpg]"> -->
+        <img src="{{imgUrl}}{{ smoothie.picture.path }}" alt="{{ smoothie.picture.alt }}">
+    
+        <p class="card-footer">{{ smoothie.description }}</p>
+        <button mat-raised-button color="accent" routerLink="/details/{{smoothie._id}}">Recette</button>
+        <button mat-stroked-button color="accent">Ajouter aux favoris</button>
+
+    </mat-card>
+    
+</div>

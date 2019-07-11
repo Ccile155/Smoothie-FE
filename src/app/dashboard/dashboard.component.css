@@ -4,9 +4,13 @@ img{
     padding: 25px;
 }
 
-h3{
+h4{
     font-style: italic;
-    /* color: whitesmoke; */
+    color: white;
+    background-color: #F64081;
+    margin-top: 64px ;
+    width: 100%;
+    line-height: 50px;
 }
 
 input{
@@ -17,6 +21,6 @@ mat-form-field{
     font-family: 'Montserrat', Verdana, sans-serif;
 }
 
-.com{
-    /* color: crimson; */
-}
+/* .com{
+    color: crimson;
+} */

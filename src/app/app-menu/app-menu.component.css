@@ -1,3 +1,11 @@
+.manav{
+    position: fixed;
+    top: 0px;
+}
+
+img{
+   height: 60px;
+}
 
 h1{
     font-family: 'Montserrat', Verdana, sans-serif;

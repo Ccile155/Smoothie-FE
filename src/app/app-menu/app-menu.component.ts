@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-app-menu',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-menu.component.css']
 })
 export class AppMenuComponent implements OnInit {
-  
+
+  private imgUrl = environment.imgUrl;
   private _title: string; //meilleure syntaxe
   constructor() { }
 

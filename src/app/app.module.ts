@@ -6,10 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatIconModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatCardModule
+} from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppMenuComponent } from './app-menu/app-menu.component';
 import { SmoothieComponent } from './smoothie/smoothie.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +24,16 @@ import { SmoothieComponent } from './smoothie/smoothie.component';
     DashboardComponent,
     AppMenuComponent,
     SmoothieComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     MatInputModule,
-    MatButtonModule, MatCheckboxModule,
+    MatButtonModule, MatCheckboxModule, MatCardModule,
     MatToolbarModule,
     MatIconModule
   ],
