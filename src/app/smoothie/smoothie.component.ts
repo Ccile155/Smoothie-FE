@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SmoothieService, Smoothie } from '../smoothie.service';
-import { NavigationExtras, Router } from '@angular/router';
+import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -15,7 +15,8 @@ export class SmoothieComponent implements OnInit {
 
   constructor(
     private smoothieService: SmoothieService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
@@ -39,12 +40,11 @@ export class SmoothieComponent implements OnInit {
       });
   }
   
-  getDetail(smoothieId: string){
+  getDetail(smoothieId: string) {
     this.router.navigate(['details'],{
-      queryParams: {'smoothieId': smoothieId}
+      queryParams: {'id': smoothieId}, relativeTo: this.route 
     } as NavigationExtras);
   }
-
 
 
 }

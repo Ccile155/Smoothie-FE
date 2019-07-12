@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import { SmoothieComponent } from './smoothie/smoothie.component';
 import { DetailComponent } from './detail/detail.component';
+import { EditionComponent } from './edition/edition.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,9 @@ const routes: Routes = [
   }, {
     path: 'details/:id',
     component: DetailComponent,
+  }, {
+    path: 'edition',
+    component: EditionComponent,
   }
 
 ];

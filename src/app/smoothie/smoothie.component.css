@@ -1,18 +1,22 @@
 #titreListe{
-    text-align: center;
-    /* justify-content: center; */
+        font-style: italic;
+        background-color: white;
+        color: #F64081;
+        margin-top: 64px ;
+        width: 100%;
+        line-height: 50px;
+    }
+
+.card-container {
+display: flex;
+flex-wrap: wrap;
 }
 
-/* .card-holder{
-    margin-right: 50px;
-} */
-
-.cards{
+.mat-card{
     /* max-width: 400px; */
     /* height: 400px; */
     width: 300px;
-    float: left;
-    margin: 20px;
+    margin: 16px;
 }
 
 .card-header{
@@ -21,13 +25,18 @@
     background-color: #F64081;
     min-height: 50px;
     vertical-align: middle;
-    margin: 0px;
+    margin-bottom: 0px;
 }
 
-img{
-    /* height: inherit; */
+.mat-card-image {
+max-width: 300px;
+height: auto;
+}
+
+/* img{
+    height: inherit;
     width: inherit;
-    }
+    } */
 
 .card-footer{
     font-style: italic;

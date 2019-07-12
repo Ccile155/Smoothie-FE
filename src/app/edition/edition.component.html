@@ -1,0 +1,61 @@
+<div class="spacerContent">
+    <br>
+    <h2>Partagez votre recette avec la communauté!</h2>
+</div>
+
+<!-- <div class="example-container">
+    <mat-form-field>
+        <input matInput placeholder="Nom de la Recette" [formControl]="titre" required>
+    </mat-form-field>
+<br>
+    <mat-form-field>
+        <textarea matInput placeholder="Description"></textarea>
+    </mat-form-field>
+<br>
+    <mat-form-field>
+        <textarea matInput placeholder="Temps de Préparation"></textarea>
+    </mat-form-field>
+<br>
+    <mat-form-field>
+        <textarea matInput placeholder="Petit conseil en plus"></textarea>
+    </mat-form-field>
+<br>
+     <mat-form-field>
+        <mat-select placeholder="Select">
+            <mat-option value="option">Option</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="setTitle(titre)" color="accent">Envoyer</button>
+</div> -->
+
+<div>
+    <form [formGroup]="smoothieForm" (ngSubmit)="onSubmit()">
+      <div class="content p-24">
+            <!-- name: Le nom du groupe -->
+            <!-- directement thetered au titre dans la buildForm function -->
+            <mat-form-field class="full-width">
+            <input matInput
+                    placeholder="Titre de la recette"
+                    formControlName="title" 
+            />
+            <mat-error *ngIf="myForm.title.hasError('required')" >
+                Le titre est obligatoire
+            </mat-error>
+            </mat-form-field>
+<br>
+            <mat-form-field class="full-width">
+                    <input matInput
+                            placeholder="Description"
+                            formControlName="description" 
+                    />
+                    <mat-error *ngIf="myForm.description.hasError('required')" >
+                        Ce champ est obligatoire
+                    </mat-error>
+            </mat-form-field>
+
+            <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="center center">
+                <button mat-raised-button color="accent">Créer</button>
+            </div>
+        </div>
+    </form>
+</div>

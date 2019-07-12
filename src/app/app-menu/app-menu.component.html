@@ -1,10 +1,17 @@
 <mat-toolbar class="manav" aria-labelledby="toolbar" color="accent">
-        <!-- <h1 class="font-effect-3d-float">{{ title | uppercase }}</h1> -->
-        <img src="{{ imgUrl }}/LogoPerso4.png" alt="Logo Smealthies">
-        <button mat-button routerLink="home"> <mat-icon>home</mat-icon> Home </button>
-        <button mat-button><mat-icon>local_bar</mat-icon> Nos Smoothies</button>
-        <span class="example-fill-remaining-space"></span>
-        <button mat-button><mat-icon>mail</mat-icon> Contact </button>
-        <button mat-button><mat-icon>create</mat-icon> Inscription </button>
-        <button mat-button><mat-icon>how_to_reg</mat-icon> Connexion </button>
+	<!-- <h1 class="font-effect-3d-float">{{ title | uppercase }}</h1> -->
+	<img src="{{ imgUrl }}/LogoPerso4.png" alt="Logo Smealthies">
+	<div fxShow="true" fxHide.lt-md="true">
+		<button mat-button routerLink="home"> <mat-icon>home</mat-icon> Home</button>
+		<button mat-button routerLink="smoothie"><mat-icon>local_bar</mat-icon> Nos Smoothies</button>
+		<button mat-button routerLink="edition"><mat-icon>cloud_upload</mat-icon> Soumettre une recette</button>
+		<span class="toolbar-end">
+			<button mat-button><mat-icon>mail</mat-icon> Contact</button>
+			<button mat-button><mat-icon>create</mat-icon> Inscription</button>
+			<button mat-button><mat-icon>how_to_reg</mat-icon> Connexion</button>
+		</span>
+	</div>
+	<div fxShow="true" fxHide.gt-sm="true" class="example-fill-remaining-space">
+		<button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon> Menu</button>
+	</div>
 </mat-toolbar>

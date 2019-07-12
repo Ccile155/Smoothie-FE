@@ -1,1 +1,60 @@
-<p>detail works!</p>
+<!-- <div class="spacerContent">
+    <mat-list>
+            <mat-list-item><img id="avatar" matListAvatar src="{{ imgUrl }}{{ smoothie.picture.path }}" alt="{{ smoothie.picture.alt }}"></mat-list-item>
+            <h3>{{smoothie.title}}</h3>
+            <h4>{{smoothie.description}} </h4>
+        <mat-divider></mat-divider>
+            <mat-list-item>Temps de préparation: {{smoothie.features.prepTime}} </mat-list-item>
+            <mat-list-item>Coût: {{smoothie.features.cost}} </mat-list-item>
+        <mat-divider></mat-divider>
+            <mat-list-item *ngFor="let step of smoothie.recipe"> {{smoothie.recipe.stepText}}</mat-list-item>
+            <mat-list-item> {{smoothie.advice}} </mat-list-item>
+    </mat-list>
+</div> -->
+
+<!-- ne peut être diplay qu'en agissant dessus avec des conditions (ternaire en bas de page)-->
+<mat-tab-group mat-align-tabs="center" class="spacerContent">
+        <mat-tab *ngFor="let smoothie of smoothies" label="{{smoothie.title}}">
+
+        </mat-tab>
+</mat-tab-group>
+
+<ng-template #details >
+    <mat-list>
+        <mat-list-item>
+            <img id="avatar" matListAvatar src="{{ imgUrl }}{{ smoothie.picture.path }}" alt="{{ smoothie.picture.alt }}">
+        </mat-list-item>
+    </mat-list>
+    <h3>{{smoothie.title}}</h3>
+    <h4>{{smoothie.description}} </h4>
+        <mat-tab-group mat-align-tabs="center" class="spacerContent" color="accent">
+          <mat-tab label="Ingredients">
+            <mat-list>
+              <mat-list-item *ngFor="let ingredients of smoothie.ingredients">
+                <p matLine>
+                  <span> {{ingredients.nom}} </span>
+                  <span> {{ingredients.quantity}} </span>
+                </p>
+              </mat-list-item>
+            </mat-list>
+          </mat-tab>
+          <mat-tab label="Etapes">
+            <mat-list>
+              <mat-list-item *ngFor="let recipe of smoothie.recipe, let i = index" class="step">
+                <p matLine>
+                  <span> {{ i + 1 }} :  </span>
+                  <span> {{ recipe.stepText}} </span>
+                </p>
+              </mat-list-item>
+            </mat-list>
+      
+          </mat-tab>
+          <mat-tab label="Galerie">
+                <!-- <mat-list-item *ngFor="let picture of smoothie.picture" class="photos">
+                    <img src="{{ imgUrl }}{{ picture.path }}" alt="{{ picture.alt }}">
+                </mat-list-item> -->
+          </mat-tab>
+        </mat-tab-group>
+      </ng-template>
+      
+      <ng-container *ngTemplateOutlet="smoothie ? details : '' "></ng-container>
