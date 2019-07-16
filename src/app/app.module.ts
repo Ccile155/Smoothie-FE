@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, HostListener } from '@angular/core';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,13 +18,15 @@ import {
   MatSelectModule
 } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatChipsModule } from '@angular/material/chips';
 import { AppMenuComponent } from './app-menu/app-menu.component';
 import { SmoothieComponent } from './smoothie/smoothie.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EditionComponent } from './edition/edition.component';
-
+import { SuccessComponent } from './success/success.component';
+import { MessageService } from './message.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { EditionComponent } from './edition/edition.component';
     AppMenuComponent,
     SmoothieComponent,
     DetailComponent,
-    EditionComponent
+    EditionComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +47,9 @@ import { EditionComponent } from './edition/edition.component';
     MatInputModule,
     MatButtonModule, MatCheckboxModule, MatCardModule, MatListModule, MatTabsModule,
     MatToolbarModule, MatIconModule, MatFormFieldModule, MatOptionModule, MatSelectModule,
-    FlexLayoutModule, ReactiveFormsModule
+    FlexLayoutModule, ReactiveFormsModule, MatChipsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MessageService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -5,6 +5,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import { SmoothieComponent } from './smoothie/smoothie.component';
 import { DetailComponent } from './detail/detail.component';
 import { EditionComponent } from './edition/edition.component';
+import { SuccessComponent } from './success/success.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,10 @@ const routes: Routes = [
   }, {
     path: 'edition',
     component: EditionComponent,
-  }
+  }, {
+    path: 'edition/success',
+    component: SuccessComponent,
+}
 
 ];
 

@@ -1,14 +1,17 @@
-<div id="titreListe" class="spacerContent">
-    <h4>Nos cocktails fruités</h4>
-</div>
+<!-- <div id="titreListe" class="spacerContent">
+    <h2>Nos cocktails fruités</h2>
+</div> -->
 
-<div class="card-container"> 
+<div class="card-container spacerContent"> 
     <mat-card *ngFor="let smoothie of smoothies" class="mat-card">
         <h3 class="card-header">{{ smoothie.title }}</h3>
-        
-        <!-- <img mat-card-image src="[imgUrl + smoothie-frai.jpg]"> -->
-        <img class="mat-card-image" src="{{imgUrl}}{{ smoothie.picture.path }}" alt="{{ smoothie.picture.alt }}">
-    
+        <!-- <div *ngIf="smoothie.picture.items.length>0">
+            <img class="mat-card-image" src="{{imgUrl}}{{ smoothie.picture.path }}" alt="{{ smoothie.picture.alt }}">
+        </div> -->
+        <!-- <div *ngIf="smoothie.picture?.length != 0 "> -->
+                        <img mat-card-image [src]="[imgUrl + '/' + smoothie.picture.path]" alt=" smoothie.picture.alt">
+        <!-- </div> -->
+
         <p class="card-footer">{{ smoothie.description }}</p>
         <!-- <button mat-raised-button color="accent" routerLink="/details/{{smoothie._id}}">Recette</button> -->
         <button mat-raised-button color="accent" [routerLink]="['/details', smoothie._id]">Recette</button>

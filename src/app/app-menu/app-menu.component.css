@@ -1,6 +1,7 @@
 .manav{
     position: fixed;
     top: 0px;
+    z-index: 10;
 }
 
 img{
@@ -24,8 +25,10 @@ button{
     /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
+    float: left;
+    /* justify-items: flex-end; */
   }
-
+/* 
  .toolbar-end{
      justify-items: flex-end;
- }
+ } */

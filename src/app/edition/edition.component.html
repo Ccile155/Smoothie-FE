@@ -2,60 +2,123 @@
     <br>
     <h2>Partagez votre recette avec la communauté!</h2>
 </div>
-
-<!-- <div class="example-container">
-    <mat-form-field>
-        <input matInput placeholder="Nom de la Recette" [formControl]="titre" required>
-    </mat-form-field>
-<br>
-    <mat-form-field>
-        <textarea matInput placeholder="Description"></textarea>
-    </mat-form-field>
-<br>
-    <mat-form-field>
-        <textarea matInput placeholder="Temps de Préparation"></textarea>
-    </mat-form-field>
-<br>
-    <mat-form-field>
-        <textarea matInput placeholder="Petit conseil en plus"></textarea>
-    </mat-form-field>
-<br>
-     <mat-form-field>
-        <mat-select placeholder="Select">
-            <mat-option value="option">Option</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <button mat-raised-button (click)="setTitle(titre)" color="accent">Envoyer</button>
-</div> -->
-
-<div>
+<div class= "general">
     <form [formGroup]="smoothieForm" (ngSubmit)="onSubmit()">
-      <div class="content p-24">
-            <!-- name: Le nom du groupe -->
-            <!-- directement thetered au titre dans la buildForm function -->
-            <mat-form-field class="full-width">
-            <input matInput
-                    placeholder="Titre de la recette"
-                    formControlName="title" 
-            />
-            <mat-error *ngIf="myForm.title.hasError('required')" >
-                Le titre est obligatoire
-            </mat-error>
-            </mat-form-field>
-<br>
-            <mat-form-field class="full-width">
-                    <input matInput
-                            placeholder="Description"
-                            formControlName="description" 
-                    />
-                    <mat-error *ngIf="myForm.description.hasError('required')" >
-                        Ce champ est obligatoire
-                    </mat-error>
-            </mat-form-field>
+        <div class="content p-24">
+                <!-- name: Le nom du groupe -->
+                <!-- directement thetered au titre dans la buildForm function -->
+                <mat-form-field class="">
+                <input matInput
+                        placeholder="Nom de la recette"
+                        formControlName="title" 
+                        required
+                />
+                <mat-error *ngIf="myForm.title.hasError('required')" >
+                    Cette recette a besoin d'un titre !
+                </mat-error>
+                </mat-form-field>
+    <br>
+                <mat-form-field class="">
+                        <input matInput
+                                placeholder="Description"
+                                formControlName="description" 
+                                required
+                        />
+                        <mat-error *ngIf="myForm.description.hasError('required')" >
+                            Une description est essentielle...
+                        </mat-error>
+                </mat-form-field>
+    <br>
+                <mat-form-field class="full-width">
+                        <mat-chip-list #ingredientsList>
+                        <!-- Selected ingredients -->
+                        <mat-chip
+                            *ngFor="let ingredient of selectedIngredients"
+                            [removable]="true"
+                            (removed)="removeIngredient(ingredient)"
+                        >
+                            {{ ingredient.nom }}
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
 
-            <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="center center">
-                <button mat-raised-button color="accent">Créer</button>
-            </div>
+                        <!-- Input -->
+                        <input
+                            placeholder="Les ingredients"
+                            #ingredientInput
+                            formControlName="ingredients"
+                            [matChipInputFor]="ingredientsList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            [matChipInputAddOnBlur]="true"
+                            (matChipInputTokenEnd)="addIngredient($event)"
+                        />
+
+                        </mat-chip-list>
+                    </mat-form-field>
+    <br>
+                <mat-form-field class="">
+                        <input matInput
+                                placeholder="Recette"
+                                formControlName="recipe" 
+                        />
+                        <mat-error *ngIf="myForm.description.hasError('required')" >
+                            Soit c'est une recette magique, soit il manque des instructions.
+                        </mat-error>
+                </mat-form-field>
+<br>
+                <mat-form-field class="">
+                        <input matInput
+                                placeholder="Temps de Préparation"
+                                formControlName="prepTime" 
+                        />
+                        <mat-error *ngIf="myForm.description.hasError('required')" >
+                            Mieux vaut savoir dans quoi on se lance.
+                        </mat-error>
+                </mat-form-field>
+&nbsp;
+                <mat-form-field class="">
+                        <input matInput
+                                placeholder="Coût de Préparation"
+                                formControlName="cost" 
+                        />
+                        <mat-error *ngIf="myForm.description.hasError('required')" >
+                            Le temps c'est de l'argent.
+                        </mat-error>
+                </mat-form-field>
+    <br>
+                <mat-form-field class="">
+                        <input matInput
+                                placeholder="Conseil bonus"
+                                formControlName="advice" 
+                        />
+                </mat-form-field>
+<br>
+                <mat-form-field class="full-width">
+                        <input matInput
+                                placeholder="Titre de l'image"
+                                formControlName="pictureName" 
+                        />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <input matInput
+                            placeholder="Description de l'image"
+                            formControlName="alt" 
+                        />
+                </mat-form-field>
+
+                <!-- <div class="full-width">
+                    <button mat-stroked-button color="accent" (click)="addFile()">Image: 
+                        <input #fileInput
+                                type="file"
+                                formControlName="picture"
+                        />
+                    </button>
+                </div> -->
+    <br>
+                <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="center center">
+                    <button mat-raised-button color="accent">Créer</button>
+                </div>
+            <div *ngFor='let message of messageService.messages'> {{message}} </div>
         </div>
     </form>
 </div>

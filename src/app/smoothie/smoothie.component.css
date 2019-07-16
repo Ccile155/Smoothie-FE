@@ -2,7 +2,7 @@
         font-style: italic;
         background-color: white;
         color: #F64081;
-        margin-top: 64px ;
+        margin-top: 84px ;
         width: 100%;
         line-height: 50px;
     }
@@ -23,20 +23,14 @@ flex-wrap: wrap;
     font-family: 'MontSerrat', Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     background-color: #F64081;
-    min-height: 50px;
-    vertical-align: middle;
-    margin-bottom: 0px;
+    padding: 20px;
+
 }
 
 .mat-card-image {
 max-width: 300px;
 height: auto;
 }
-
-/* img{
-    height: inherit;
-    width: inherit;
-    } */
 
 .card-footer{
     font-style: italic;
