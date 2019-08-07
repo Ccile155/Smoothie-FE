@@ -27,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { EditionComponent } from './edition/edition.component';
 import { SuccessComponent } from './success/success.component';
 import { MessageService } from './message.service';
+import { CVComponent } from './cv/cv.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MessageService } from './message.service';
     SmoothieComponent,
     DetailComponent,
     EditionComponent,
-    SuccessComponent
+    SuccessComponent,
+    CVComponent
   ],
   imports: [
     BrowserModule,

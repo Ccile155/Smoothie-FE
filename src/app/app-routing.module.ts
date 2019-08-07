@@ -6,6 +6,7 @@ import { SmoothieComponent } from './smoothie/smoothie.component';
 import { DetailComponent } from './detail/detail.component';
 import { EditionComponent } from './edition/edition.component';
 import { SuccessComponent } from './success/success.component';
+import { CVComponent } from './cv/cv.component';
 
 
 const routes: Routes = [
@@ -25,8 +26,10 @@ const routes: Routes = [
   }, {
     path: 'edition/success',
     component: SuccessComponent,
-}
-
+  }, {
+    path: 'cv',
+    component: CVComponent,
+  }
 ];
 
 @NgModule({

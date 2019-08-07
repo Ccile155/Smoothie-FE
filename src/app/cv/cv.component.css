@@ -1,0 +1,21 @@
+#cv{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}
+
+.row{
+    width:100%;
+}
+
+.col1{
+    float: left;
+    width:69%;
+    border: solid 1px aquamarine;
+}
+
+.col2{
+    float: right;
+    width:30%;
+    border: solid 1px salmon;
+}
